@@ -4,21 +4,40 @@
 <meta charset="ISO-8859-1">
 <title>Create New Student</title>
 </head>
+
+<style>
+.formLabel {
+	padding-right: 10px;
+	padding-left: 20px;
+	width: 35%;
+	float: left;
+	font-size: 18px;
+}
+.formInput {
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 30%;
+	float: left;
+}
+.formButtons {
+	padding: 15px;
+	width: 30%;
+}
+</style>
+
 <body>
 <form action="/api/student" method="post">
-<h5>
-Roll-Number &nbsp; <input type="text" name="rollNumber" maxlength=12><br>
-Name &nbsp; <input type="text" name="studentName"><br>
-Date Of Birth &nbsp; <input type="date" name="dateOfBirth"><br>
-Department &nbsp; <input type="text" name="deptCode"><br>
-Govt issued Identity Number &nbsp; <input type="text" name="govtIDNumber"><br>
-Home Address &nbsp; <textarea name="homeAddress" rows="4" cols="15"></textarea><br>
-Hostel Address &nbsp; <textarea name="hostelAddress" rows="4" cols="15"></textarea><br>
-Contact Number &nbsp; <input type="text" name="phoneNumber"><br>
-Parent-Name &nbsp; <input type="text" name="parentName"><br>
-Parent-Contact-Num &nbsp; <input type="text" name="parentContactNumber"><br>
-<br><input type="submit" value = "Submit">
-</h5>
+<div class="formLabel">Roll-Number</div> <div class="formInput"><input type="text" name="rollNumber" maxlength=12></div><br>
+<div class="formLabel">Name</div> <div class="formInput"><input type="text" name="studentName"></div><br>
+<div class="formLabel">Date Of Birth</div> <div class="formInput"><input type="date" name="dateOfBirth"></div><br>
+<div class="formLabel">Department</div> <div class="formInput"><input type="text" name="deptCode"></div><br>
+<div class="formLabel">Govt issued Identity Number</div> <div class="formInput"><input type="text" name="govtIDNumber"></div><br>
+<div class="formLabel">Home Address</div> <div class="formInput"><textarea name="homeAddress" rows="4" cols="15"></textarea></div><br>
+<div class="formLabel">Hostel Address</div> <div class="formInput"><textarea name="hostelAddress" rows="4" cols="15"></textarea></div><br>
+<div class="formLabel">Contact Number</div> <div class="formInput"><input type="text" name="phoneNumber"></div><br>
+<div class="formLabel">Parent-Name</div> <div class="formInput"><input type="text" name="parentName"></div><br>
+<div class="formLabel">Parent-Contact-Num</div> <div class="formInput"><input type="text" name="parentContactNumber"></div><br><br>
+<div class="formButtons"><input type="submit" value = "Submit"><input type="reset" value = "Reset"></div>
 </form>
 </body>
 </html>

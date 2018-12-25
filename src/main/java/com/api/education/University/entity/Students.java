@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.api.education.University.dto.StudentsFormDTO;
+import com.api.education.University.helper.DateHelper;
+
 @Entity
 @Table(name = "students")
 public class Students implements Serializable{
@@ -50,6 +53,40 @@ public class Students implements Serializable{
 	
 	@Column(name = "par_contact_num")
     private String parentContactNumber;
+	
+	public Students (StudentsFormDTO studentForm) {
+		this.rollNumber = studentForm.getRollNumber();
+		this.studentName = studentForm.getStudentName();
+		this.dateOfBirth = DateHelper.convertStringToDate(studentForm.getDateOfBirth());
+		this.deptCode = studentForm.getDeptCode();
+		this.govtIDNumber = studentForm.getGovtIDNumber();
+		this.homeAddress = studentForm.getHomeAddress();
+		this.hostelAddress = studentForm.getHostelAddress();
+		this.phoneNumber = studentForm.getPhoneNumber();
+		this.parentName = studentForm.getParentName();
+		this.parentContactNumber = studentForm.getParentContactNumber();
+	}
+
+/*	
+	public Students(String rollNumber, String studentName, Date dateOfBirth, String deptCode, String govtIDNumber,
+			String homeAddress, String hostelAddress, String phoneNumber, String parentName,
+			String parentContactNumber) {
+		super();
+		this.rollNumber = rollNumber;
+		this.studentName = studentName;
+		this.dateOfBirth = dateOfBirth;
+		this.deptCode = deptCode;
+		this.govtIDNumber = govtIDNumber;
+		this.homeAddress = homeAddress;
+		this.hostelAddress = hostelAddress;
+		this.phoneNumber = phoneNumber;
+		this.parentName = parentName;
+		this.parentContactNumber = parentContactNumber;
+	}
+*/	
+	public Students() {
+		super();
+	}
 
 	public int getId() {
 		return id;
