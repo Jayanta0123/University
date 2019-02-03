@@ -12,7 +12,6 @@
 	<artifactId>University</artifactId>
 	<version>1.0.0</version>
 	<name>University</name>
-
 	<description>Demo project for University Education System</description>
 
 	<properties>
@@ -35,7 +34,13 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-				
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+<!-- 		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+ -->				
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -51,5 +56,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

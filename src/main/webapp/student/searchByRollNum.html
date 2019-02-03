@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Search By Student Roll-Number</title>
+	<meta charset="ISO-8859-1">
+	<title>Search By Student Roll-Number</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var button = document.getElementById("searchButton").id;
+			var clrButton = document.getElementById("clearButton").id;
+			var docLocation = document.location.origin;
+			$("button").click(function(){
+				var rollNum = document.getElementById("rollNumber").value;
+				var apiLink = docLocation + '/api/student?rollNumber=' + rollNum;
+				var items = [];
+				$.getJSON(apiLink, function(result){
+					$.each(result, function(key, val){
+						items.push(key + " :: <input text=\"data\" value=\"" + val + "\"><br>");
+					});
+					$("p").append(items);
+				});
+			});
+			
+			$("clrButton").click(function(){
+				$("p").remove();			
+			});
+		});
+	</script>
 </head>
+<style>
+.textPad {
+	padding: 10px;
+	width:	30%;
+	font-size: 18px;
+}
+</style>
 <body>
-<form action="/api/student" method="get">
- Roll-Number: &nbsp;&nbsp; <input type="text" name="rollNumber">
- <input type="submit" value="Submit">
-</form>
+	<div class="textPad">Roll-Number: </div> <input type="text" id="rollNumber">
+ 	<div class="textPad"><button id="searchButton">Search</button></div>
+ 	<div class="textPad"><button id="clearButton">Clear All</button></div>
+ 	<p></p>
 </body>
 </html>
