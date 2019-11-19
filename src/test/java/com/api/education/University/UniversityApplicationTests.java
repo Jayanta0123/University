@@ -11,7 +11,8 @@ public class UniversityApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		String[] args = {"0"};
+		UniversityApplication.main(args);
 	}
-
 }
 
